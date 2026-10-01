@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NMWS Admin Panel</title><link rel="stylesheet" href="style.css"></head><body class="admin-wrap"><div class="admin-layout"><aside class="sidebar"><div class="side-brand"><img src="assets/nmws-logo.png"><b>NMWS<br>ADMIN</b></div><hr style="border-color:#493a33;margin:15px 0"><a href="admin-dashboard.html">📊 Dashboard</a><a href="admin-notices.html">📢 Notices</a><a href="admin-programs.html">📅 Programs</a><a href="admin-members.html">👥 Members</a><a href="admin-messages.html">💬 Messages</a><a href="admin-album.html">🖼️ Album</a><a href="admin-slider.html">🎞️ Home Slider</a><a href="admin-contact.html">📞 Contact Details</a><a href="admin-developer.html">👨‍💻 Developer</a><a href="index.html">🌐 View Website</a><a href="#" onclick="logout()">🚪 Logout</a></aside><main class="admin-main">
+<div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><div><h1>Album Manager</h1><p class="muted">Upload photos or videos for the public NMWS album.</p></div></div>
+<div class="card" style="margin-top:20px"><div class="card-body">
+<form id="albumForm" class="form" onsubmit="event.preventDefault();addAlbumItem()">
+<div class="form-grid"><div><label>Album Category</label><input name="category" placeholder="e.g. Welfare Program, Awareness, Celebration" required></div><div><label>Event Name</label><input name="eventName" placeholder="e.g. Cyber Security Awareness 2026" required></div></div>
+<div><label>Select Photos / Videos</label><input name="files" type="file" accept="image/*,video/*" multiple required></div>
+<div><label>Description (applies to all selected media)</label><input name="description" placeholder="Short description"></div>
+<button class="btn btn-primary" type="submit">Upload to Album</button>
+</form>
+<p class="muted" style="margin-top:12px;font-size:13px">You can select many photos/videos together. Each file can be up to 8 MB. Items are grouped by Category + Event Name.</p>
+</div></div>
+<div style="margin-top:25px"><div id="albumAdminGrid" class="grid"></div></div>
+</main></div><div id="toast" class="toast"></div><script src="script.js"></script><script>renderAlbumAdmin()</script></body></html>
